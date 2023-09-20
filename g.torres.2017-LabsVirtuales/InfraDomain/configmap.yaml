@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: users
+data:
+  port: "8001"
+  db_host: "mysql8:3306"
+  db_database: users
+  labs_url: "labs:8002"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: labs
+data:
+  port: "8002"
+  db_host: "postgres15:5432"
+  db_database: labs
+  users_url: "users:8001"
